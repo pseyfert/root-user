@@ -1,0 +1,3 @@
+[submodule "git-submodules/gitignores"]
+	path = git-submodules/gitignores
+	url = https://github.com/pseyfert/gitignore.git

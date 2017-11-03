@@ -1,0 +1,31 @@
+stages:
+  - build
+
+sft-build:
+  stage: build
+  script:
+    - yum install -y glibc-headers glibc-devel git gsl-devel freetype-devel libSM libX11-devel libXext-devel make gcc-c++ gcc binutils libXpm-devel libXft-devel 
+    - source /cvmfs/sft.cern.ch/lcg/views/LCG_latest/x86_64-slc6-gcc62-opt/setup.sh
+    - make
+
+rootdocker-build:
+  stage: build
+  image: rootproject/root-ubuntu16
+  script:
+    - make
+
+lhcb-root-build:
+  stage: build
+  script:
+    - yum install -y glibc-headers glibc-devel git gsl-devel freetype-devel libSM libX11-devel libXext-devel make gcc-c++ gcc binutils libXpm-devel libXft-devel 
+    - export USER=nobody
+    - source /cvmfs/lhcb.cern.ch/lib/lhcb/LBSCRIPTS/prod/InstallArea/scripts/LbLogin.sh -c x86_64-slc6-gcc62-opt
+    - lb-run ROOT/$(lb-run -l ROOT | head -1 | sed "s/ .*//") make
+
+lhcb-urania-build:
+  stage: build
+  script:
+    - yum install -y glibc-headers glibc-devel git gsl-devel freetype-devel libSM libX11-devel libXext-devel make gcc-c++ gcc binutils libXpm-devel libXft-devel 
+    - export USER=nobody
+    - source /cvmfs/lhcb.cern.ch/lib/lhcb/LBSCRIPTS/prod/InstallArea/scripts/LbLogin.sh -c x86_64-slc6-gcc62-opt
+    - lb-run Urania/latest make

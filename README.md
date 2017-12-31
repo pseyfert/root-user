@@ -28,3 +28,13 @@ An example gitignore file to be roughly correct for most ROOT C++ projects.
  - IWYU (and its inclusion in `make test` and the CI)
  - possibilities to pick either make or cmake
  - clang-format (and its inclusion in `make test` and the CI)
+
+# LICENSE
+
+![GPL v3](https://www.gnu.org/graphics/gplv3-88x31.png)
+
+Code in this repository is licensed under [GPL v3](LICENSE).
+
+![CC-BY-SA](https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png)
+
+The repository's logo is licensed under [CC-BY-SA](CC-BY-SA).

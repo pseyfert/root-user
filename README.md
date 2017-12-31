@@ -1,5 +1,7 @@
 # root-user
 
+[![pipeline status](https://gitlab.cern.ch/pseyfert/root-user/badges/master/pipeline.svg)](https://gitlab.cern.ch/pseyfert/root-user/commits/master)
+
 An empty template for projects using the ROOT framework.
 
 ## continuous integration
@@ -28,6 +30,16 @@ An example gitignore file to be roughly correct for most ROOT C++ projects.
  - IWYU (and its inclusion in `make test` and the CI)
  - possibilities to pick either make or cmake
  - clang-format (and its inclusion in `make test` and the CI)
+
+# About
+
+It can be tedious to set up a C++ project using ROOT with all the goodies out
+there. Here I attempt an empty template to just start working in.
+
+The repository is hosted on [github](https://github.com/pseyfert/root-user) and
+is mirrored to [gitlab.cern.ch](https://gitlab.cern.ch/pseyfert/root-user),
+where a continuous integration runs (though no full coverage, especially for
+YCM I have no idea how to make an automated test).
 
 # LICENSE
 
